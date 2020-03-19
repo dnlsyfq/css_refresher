@@ -272,10 +272,46 @@ When you create your variables in :root they will set the value of that variable
 You can then over-write these variables by setting them again within a specific element.
 
 
+
+```
 <style>
   :root {
-    /* Only change code below this line */
-  --penguin-belly:pink;
-    /* Only change code above this line */
+    --penguin-skin: gray;
+    --penguin-belly: pink;
+    --penguin-beak: orange;
+  }
+
+  body {
+    background: var(--penguin-belly, #c6faf1);
+  }
+
+  .penguin {
+    /* override inheritance */
+    --penguin-belly:white;
+
+</style>
+```
+
+**media query to change a variable**
+
+when your screen is smaller or larger than your media query break point, you can change the value of a variable, and it will apply its style wherever it is used.
+
+```
+<style>
+  :root {
+    --penguin-size: 300px;
+    --penguin-skin: gray;
+    --penguin-belly: white;
+    --penguin-beak: orange;
+  }
+
+  @media (max-width: 350px) {
+    :root {
+      /* Only change code below this line */
+    --penguin-size:200px;
+    --penguin-skin:black;
+      /* Only change code above this line */
+    }
   }
 </style>
+```
