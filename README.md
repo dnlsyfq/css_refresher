@@ -20,6 +20,189 @@ id attributes should be unique. Browsers won't enforce this, but it is a widely 
   </form>
 ```
 
+**Img**
+```
+<img src="" alt="">
+```
+
+# HTML5
+
+HTML5 introduced a number of new elements that give developers more options while also incorporating accessibility features. These tags include main, header, footer, nav, article, and section
+
+**Note about section and div**
+
+The section element is also new with HTML5, and has a slightly different semantic meaning than article. An article is for standalone content, and a section is for grouping thematically related content. They can be used within each other, as needed. For example, if a book is the article, then each chapter is a section. When there's no relationship between groups of content, then use a div.
+
+```
+<div> - groups content
+<section> - groups related content
+<article> - groups independent, self-contained content
+
+```
+
+**Note about head and header**
+
+Note: The header is meant for use in the body tag of your HTML document. This is different than the head element, which contains the page's title, meta information, etc.
+
+**Navigation**
+
+nav element is another HTML5 item with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page
+
+```
+<body>
+  <header>
+    <h1>Training with Camper Cat</h1>
+
+    <nav>
+      <ul>
+        <li><a href="#stealth">Stealth &amp; Agility</a></li>
+        <li><a href="#combat">Combat</a></li>
+        <li><a href="#weapons">Weapons</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <main>
+    <section id="stealth">
+      <h2>Stealth &amp; Agility Training</h2>
+      <article><h3>Climb foliage quickly using a minimum spanning tree approach</h3></article>
+      <article><h3>No training is NP-complete without parkour</h3></article>
+    </section>
+    <section id="combat">
+      <h2>Combat Training</h2>
+      <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>
+      <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>
+    </section>
+    <section id="weapons">
+      <h2>Weapons Training</h2>
+      <article><h3>Swords: the best tool to literally divide and conquer</h3></article>
+      <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
+    </section>
+  </main>
+</body>
+
+```
+
+
+**Audio**
+
+audio element gives semantic meaning when it wraps sound or audio stream content in your markup. Audio content also needs a text alternative to be accessible to people who are deaf or hard of hearing. This can be done with nearby text on the page or a link to a transcript.
+
+The audio tag supports the controls attribute. This shows the browser default play, pause, and other controls, and supports keyboard functionality. This is a boolean attribute, meaning it doesn't need a value, its presence on the tag turns the setting on.
+
+```
+<audio id="meowClip" controls>
+  <source src="audio/meow.mp3" type="audio/mpeg" />
+  <source src="audio/meow.ogg" type="audio/ogg" />
+</audio>
+```
+**Figure**
+
+the figure element, along with the related figcaption. Used together, these items wrap a visual representation (like an image, diagram, or chart) along with its caption. 
+
+```
+<figure>
+  <img src="roundhouseDestruction.jpeg" alt="Photo of Camper Cat executing a roundhouse kick">
+  <br>
+  <figcaption>
+    Master Camper Cat demonstrates proper form of a roundhouse kick.
+  </figcaption>
+</figure>
+```
+
+```
+<body>
+  <header>
+    <h1>Training</h1>
+    <nav>
+      <ul>
+        <li><a href="#stealth">Stealth &amp; Agility</a></li>
+        <li><a href="#combat">Combat</a></li>
+        <li><a href="#weapons">Weapons</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+
+      <!-- Only change code below this line -->
+      <figure>
+        <!-- Stacked bar chart will go here -->
+        <br>
+        <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>
+      </figure>
+      <!-- Only change code above this line -->
+
+    </section>
+    <section id="stealth">
+      <h2>Stealth &amp; Agility Training</h2>
+      <article><h3>Climb foliage quickly using a minimum spanning tree approach</h3></article>
+      <article><h3>No training is NP-complete without parkour</h3></article>
+    </section>
+    <section id="combat">
+      <h2>Combat Training</h2>
+      <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>
+      <article><h3>Goodbye world: 5 proven ways to knock out an opponent</h3></article>
+    </section>
+    <section id="weapons">
+      <h2>Weapons Training</h2>
+      <article><h3>Swords: the best tool to literally divide and conquer</h3></article>
+      <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
+    </section>
+  </main>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+
+```
+
+**Form Label**
+
+label tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The for attribute on a label tag explicitly associates that label with the form control and is used by screen readers.
+
+```
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+</form>
+```
+
+```
+<form>
+  <fieldset>
+    <legend>Choose one of these three items:</legend>
+    <input id="one" type="radio" name="items" value="one">
+    <label for="one">Choice One</label><br>
+    <input id="two" type="radio" name="items" value="two">
+    <label for="two">Choice Two</label><br>
+    <input id="three" type="radio" name="items" value="three">
+    <label for="three">Choice Three</label>
+  </fieldset>
+</form>
+```
+
+**Date, Time**
+
+HTML5 introduced an option to specify a date field. Depending on browser support, a date picker shows up in the input field when it's in focus, which makes filling in a form easier for all users.
+
+For older browsers, the type will default to text, so it helps to show users the expected date format in the label or as placeholder text just in case.
+
+```
+<label for="input1">Enter a date:</label>
+<input type="date" id="input1" name="input1">
+```
+
+```
+<p> Buy a monitor 
+<time datetime="2013-02-13"> last Wednesday </time> for less expensive
+
+<time datetime="2013-02-32"> <t>indepence </t></time>
+</p>
+
+```
+
+
+
+
 # Basic CSS 
 
 * Padding : An element's padding controls the amount of space between the element's content and its border.
@@ -315,3 +498,61 @@ when your screen is smaller or larger than your media query break point, you can
   }
 </style>
 ```
+
+**CSS Reader**
+
+visually hide content meant for screen readers (sr)
+
+```
+.sr-only{
+  position:absolute;
+  left:-10000px;
+  width:1px;
+  height:1px;
+  top:auto;
+  overflow:hidden;
+}
+
+<!-- except for  -->
+<!-- hides content for everyone  -->
+  {
+    display:none;
+    visibility:hidden
+  }
+
+<!-- remove from flow  -->
+  {
+    width: 0px;
+    height: 0px;
+  }
+
+
+
+
+
+```
+
+**Color Contrast**
+
+Recommended contrast ratio 4.5:1 
+
+hsl(0,%,%)
+hsl(120,25%,%%)
+
+
+**Button keyboard shortcut**
+
+<button accesskey="b">Important</button>
+
+**Tab keyboard focus**
+
+tabindex attr has 3 distinct function  relate to keyboard focus. When its on tag it can be focused on 
+
+div, span ,p can use tabindex="0" attr . tabindex="-1" , element is focusable but not reachable by keyboard
+
+
+```
+<div tabindex="0>I need focus</div>
+
+```
+
