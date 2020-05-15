@@ -109,7 +109,7 @@ h1.special {
 
 ### Nested Elements
 CSS also supports selecting elements that are nested within other HTML elements. 
-
+select element inside another element
 ```
 <ul class='main-list'>
   <li> ... </li>
@@ -123,6 +123,61 @@ CSS also supports selecting elements that are nested within other HTML elements.
 ```
 .main-list selects the .main-list element (the unordered list element). The nested <li> are selected by adding li to the selector, separated by a space, resulting in .main-list li as the final selector (note the space in the selector).
 
+```
+<div class="description">A city-size shrine to the Renaissance, Florence offers frescoes, sculptures, churches, palaces, and other monuments from the richest cultural flowering the world has known. Names from its dazzling historical pastDante, Michelangelo, Galileo, Machiavelliare some of the most resonant of the medieval age. <a href="http://travel.nationalgeographic.com/travel/city-guides/florence-italy/" target="_blank">Learn More</a>.
+    <h5>Top Attractions</h5>
+    <ul>
+      <li>Museums</li>
+      <li>Bike Tours</li>
+      <li>Historical Monuments</li>
+    </ul>
+  </div>
+
+    .description h5 {
+      color:teal;
+    }
+```
+instead of selecting all h5 elements, you selected only the h5 elements nested inside the .description element
+
+### Chaining and Specificity
+
+Adding more than one tag, class, or ID to a CSS selector increases the specificity of the CSS selector.
+
+```
+p {
+  color: blue;
+}
+
+
+.main p {
+  color: red;
+}
+```
+### Important
+
+There is one thing that is even more specific than IDs: !important. !important can be applied to specific attributes instead of full rules. It will override any style no matter how specific it is. As a result, it should almost never be used. Once !important is used, it is very hard to override.
+
+```
+p {
+  color: blue !important;
+}
+
+
+.main p {
+  color: red;
+}
+```
+> Since !important is used on the p selector’s color attribute, all p elements will appear blue, even though there is a more specific .main p selector that sets the color attribute to red.
+
+### Multiple Selectors
+separate the selectors by a comma to apply the same style to both tag.
+unrelated selector
+
+```
+h1, .menu {
+    font-family:Georgia;
+}
+```
 
 
 
