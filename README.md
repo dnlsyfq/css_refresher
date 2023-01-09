@@ -200,6 +200,78 @@ For older browsers, the type will default to text, so it helps to show users the
 
 ```
 
+# CSS Selectors
+### ID
+```
+<p id="content"></p>
+
+#content {
+  font-size:27px;
+}
+```
+### Class
+```
+<div class="title"></div>
+
+.title{
+  font-size:54px;
+}
+```
+### Type
+```
+<button> Go to </button>
+
+button {
+  background-color:purple;
+  height: 150px;
+  color: white;
+  widthL 300px;
+}
+```
+### pseudo-class
+```
+selector:pseudo-class {
+  property: value;
+}
+
+selector:hover {
+  property: value;
+}
+
+```
+
+### attributes
+```
+Attributes
+Attribute selectors are a special kind of selector that will match elements based on their attributes and attribute values.
+
+Their generic syntax consists of square brackets ([]) containing an attribute name followed by an optional condition to match against the value of the attribute.
+
+Attribute selectors can be divided into two categories depending on the way they match attribute values:
+
+Presence and value attribute selectors and
+Substring value attribute selectors.
+These attribute selectors try to match an exact attribute value:
+
+[attr] This selector will select all elements with the attribute attr, whatever its value.
+[attr=val] This selector will select all elements with the attribute attr, but only if its value is val.
+[attr~=val] This selector will select all elements with the attribute attr, but only if val is one of a space-separated list of words contained in attr's value. (This one is a bit more complex, so checking some documentation might be helpful.)
+
+img[alt]{
+  
+}
+```
+
+```
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+```
 
 
 
