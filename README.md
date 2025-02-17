@@ -393,6 +393,8 @@ html tag | class {
 ```
 {
     background-color:green;
+    background-color:#dddddd;
+    background-color:#ddd;
 }
 
 body {
